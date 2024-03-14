@@ -10,7 +10,7 @@ def get_input_from_console():
     pass
 
 
-def input_using_built_in_funcs():
+def input_using_built_in_funcs(filename: str):
     """
     Gets input from file, using Python's built-in file reader, of mentioned filename,
     and returns it.
@@ -26,7 +26,7 @@ def input_using_built_in_funcs():
     pass
 
 
-def input_using_pandas_lib():
+def input_using_pandas_lib(filename: str):
     """
     Gets input from file, using Pandas library, of mentioned filename,
     and returns it.

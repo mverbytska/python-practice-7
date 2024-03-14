@@ -1,5 +1,5 @@
 
-def output_in_console():
+def output_in_console(text:str ):
     """
     Prints given output in console.
     Args:
@@ -18,7 +18,7 @@ def output_in_console():
     pass
 
 
-def file_output_with_built_in_funcs():
+def file_output_with_built_in_funcs(text: str, filename: str):
     """
     Writes the given output into file with a given filename using Python built-in
     file writer.
@@ -30,7 +30,7 @@ def file_output_with_built_in_funcs():
     pass
 
 
-def file_output_with_pandas_lib():
+def file_output_with_pandas_lib(text: str, filename: str):
     """
     Writes the given output into .csv format file with a given filename
      using Pandas function
