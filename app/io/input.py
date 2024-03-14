@@ -1,3 +1,5 @@
+import pandas as pd
+
 
 def get_input_from_console():
     """
@@ -7,7 +9,8 @@ def get_input_from_console():
         :return: User's value that was written into the input function as an argument.
         :rtype: str
     """
-    pass
+    text = input('Please write your text: ')
+    return text
 
 
 def input_using_built_in_funcs(filename: str):
@@ -23,7 +26,13 @@ def input_using_built_in_funcs(filename: str):
     Raises:
         FileNotFoundError if input file does not exist or is not found.
     """
-    pass
+    try:
+        with open(filename, 'r') as f:
+            text = f.read()
+            return text
+    except FileNotFoundError:
+        print('File not found')
+        return None
 
 
 def input_using_pandas_lib(filename: str):
@@ -32,7 +41,7 @@ def input_using_pandas_lib(filename: str):
     and returns it.
 
     Args;
-        param filename(str): String with file' name from which the input is read.
+        param filename(str): String with name of the file from which the input is read.
     Returns:
         :return: Text from input file.
         :rtype: str
@@ -40,5 +49,10 @@ def input_using_pandas_lib(filename: str):
     Raises:
         FileNotFoundError if input file does not exist or is not found.
     """
-    pass
-
+    try:
+        data = pd.read_csv(filename)
+        text = data.to_string(index=False, header=False)
+        return text
+    except FileNotFoundError:
+        print('File not found')
+        return None
