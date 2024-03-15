@@ -50,7 +50,7 @@ def input_using_pandas_lib(filename: str):
     """
     try:
         data = pd.read_csv(filename)
-        text = data.to_string(index=False, header=False)
+        text = data.to_string(index=False, header=True)
         return text
     except FileNotFoundError:
         raise FileNotFoundError(f'File {filename} not found')
