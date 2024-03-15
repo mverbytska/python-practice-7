@@ -1,4 +1,5 @@
 import unittest
+import pandas as pd
 from app.io import input
 
 
@@ -24,6 +25,12 @@ class TestInputWithPandasLibrary(unittest.TestCase):
         with self.assertRaises(FileNotFoundError):
             input.input_using_pandas_lib(error_filepath)
 
+    def test_input_using_pandas_with_existing_file(self):
+        test_df = pd.DataFrame({'col1': [1, 2, 3], 'col2': [4, 5, 6], 'col3': [7, 8, 9]})
+        test_df.to_csv('./test_file.csv', index=False, header=False)
+        test_result = input.input_using_pandas_lib('./test_file.csv')
+        expected_result = ' 1  4  7\n 2  5  8\n 3  6  9'
+        self.assertEqual(expected_result, test_result)
 
 
 if __name__ == '__main__':
