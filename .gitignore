@@ -1,3 +1,4 @@
 /.idea
 venv
 /my_static_data
+.pytest_cache
