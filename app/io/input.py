@@ -31,8 +31,7 @@ def input_using_built_in_funcs(filename: str):
             text = f.read()
             return text
     except FileNotFoundError:
-        print('File not found')
-        return None
+        raise FileNotFoundError(f'File {filename} not found')
 
 
 def input_using_pandas_lib(filename: str):
@@ -54,5 +53,7 @@ def input_using_pandas_lib(filename: str):
         text = data.to_string(index=False, header=False)
         return text
     except FileNotFoundError:
-        print('File not found')
-        return None
+        raise FileNotFoundError(f'File {filename} not found')
+
+
+
