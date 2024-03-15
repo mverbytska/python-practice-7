@@ -3,3 +3,4 @@ venv
 /my_static_data
 .pytest_cache
 temp_file.txt
+test_file.csv
